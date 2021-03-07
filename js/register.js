@@ -30,7 +30,6 @@ document.getElementById("submit").addEventListener("click", () => {
         userPassword === "" ||
         userConfirmPassword === ""
       ) {
-        document.getElementById("container").style.backgroundColor = "red";
         localStorage["error-message"] = localStorage["email-error-message"];
       } else if (
         userPassword === userConfirmPassword &&
