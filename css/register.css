@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400px;
+}
+
+body {
+  overflow: hidden;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cfccd6;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #322e18;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#email,
+#password,
+#confirmPassword {
+  border-radius: 12px;
+  padding: 20px 60px 20px 10px;
+  margin-bottom: 1.5rem;
+  background-color: #847979;
+  outline: none;
+  width: 10vw;
+  min-width: 150px;
+}
+
+#email:focus,
+#password:focus,
+#confirmPassword:focus {
+  transform: scale(1.05);
+}
+
+#email::placeholder,
+#password::placeholder,
+#confirmPassword::placeholder {
+  color: white;
+}
+
+#error-messages {
+  margin-bottom: 1rem;
+  color: #dd5e5e;
+  font-size: 13pt;
+  font-weight: 600;
+}
+
+input[type="submit"] {
+  outline: 0;
+  padding: 20px 35px 20px 35px;
+  background-color: #b7b5e4;
+  border-radius: 100px;
+  font-size: 16pt;
+  transition: all 0.5s;
+  width: 10vw;
+  min-width: 150px;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.1, 0.9);
+}
+
+#back-button {
+  margin-top: 2rem;
+  font-size: 16pt;
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+#back-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#back-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}

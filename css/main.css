@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400px;
+}
+
+body {
+  overflow: hidden;
+}
+
+#test {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#link {
+  position: absolute;
+  text-decoration: none;
+  color: white;
+}
+
+#menuButton {
+  text-decoration: none;
+  font-size: 35pt;
+  background: none;
+  position: absolute;
+  top: 0;
+  color: white;
+  margin-right: 2vw;
+  margin-top: 1vw;
+  z-index: 100;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 15vw;
+  transform: translate(85vw, -100vh);
+  height: 100vh;
+  background-color: #847979;
+  transition: transform 0.5s ease;
+}
+
+#menu:target {
+  transform: translate(85vw, 0vh);
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 25pt;
+  margin-bottom: 5vh;
+}
+
+#info,
+#about,
+#login,
+#logout {
+  position: relative;
+  text-align: center;
+}
+
+#info::after,
+#about::after,
+#login::after,
+#logout::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info::before,
+#about::before,
+#login::before,
+#logout::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  transform-origin: left;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info:hover::before,
+#about:hover::before,
+#login:hover::before,
+#logout:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+#info:hover::after,
+#about:hover::after,
+#login:hover::after,
+#logout:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #bbc2e2;
+}
+
+#container h1 {
+  font-size: 50pt;
+  color: white;
+}
+
+#getStarted {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  outline: none;
+  margin-top: 3rem;
+  padding: 20px 30px 20px 30px;
+  font-size: 16pt;
+  border-radius: 50px;
+  color: #847979;
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+#getStarted:hover {
+  transform: scale(1.1, 0.9);
+}
+
+#getStartedHover {
+  position: absolute;
+  transform: rotateZ(45deg);
+  width: 50px;
+  height: 100%;
+  background-color: black;
+  transition: transform 1s;
+}
+
+#getStartedHover:hover {
+  transform: scale(100px);
+}
+
+@media screen and (max-width: 768px) {
+  #menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    transform: translate(0, -100vh);
+    height: 100vh;
+    background-color: #847979;
+    transition: transform 0.5s ease;
+    z-index: 70;
+  }
+
+  #menu:target {
+    transform: translate(0, 0vh);
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #bbc2e2;
+  }
+
+  #container h1 {
+    font-size: 25pt;
+    color: white;
+  }
+
+  #getStarted {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    outline: none;
+    margin-top: 3rem;
+    padding: 20px 30px 20px 30px;
+    font-size: 12pt;
+    border-radius: 50px;
+    color: #847979;
+    overflow: hidden;
+    transition: 0.2s ease;
+  }
+
+  #getStarted:hover {
+    transform: scale(1.1, 0.9);
+  }
+
+  #getStarted::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+    opacity: 0.15;
+  }
+
+  #getStarted:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}

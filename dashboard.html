@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script defer src="./js/CheckLogin.js"></script>
+    <script defer src="./js/hamburgermenu.js"></script>
+    <script defer src="./js/loggedIN.js"></script>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <div id="burgerContainer">
+        <button id="headerLogoutButton">Logout</button>
+      </div>
+    </header>
+
+    <div id="container">
+      <div id="AddNew-lightbox">
+        <button id="close-task-info-button">X</button>
+
+        <div id="rubrik">
+          <input type="text" id="Task-Name-id" placeholder="Task Name" />
+        </div>
+
+        <div id="task-info">
+          <div id="task-info-elements">
+            <p id="name">
+              Assigned:
+              <input type="text" id="assigned" placeholder="Full Name" />
+            </p>
+            <div id="progressbar">
+              <p>Progress:</p>
+              <div id="test1">
+                <input type="range" id="progressbar-slider" />
+                <div id="test2"></div>
+              </div>
+              <p id="percentage">30%</p>
+            </div>
+            <p id="deadline">
+              Deadline:
+              <input type="text" id="deadline-input" placeholder="YYYY-MM-DD" />
+            </p>
+          </div>
+        </div>
+
+        <div id="task-description-info">
+          <div id="description-container">
+            <h2 id="Description">Description</h2>
+            <textarea id="description-content" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+
+        <div id="done-button">
+          <p id="add-task-error-message">You need to fill out all fields!</p>
+          <button id="done">Done</button>
+        </div>
+      </div>
+
+      <div id="todolist">
+        <div id="ifempty">
+          <h1 id="ifemptyH1"></h1>
+          <h2 id="ifemptyH2"></h2>
+        </div>
+      </div>
+      <div id="buttons">
+        <button id="AddNew" class="buttons">Add New</button>
+        <button id="save" class="buttons">Update</button>
+      </div>
+    </div>
+  </body>
+</html>

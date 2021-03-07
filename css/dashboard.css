@@ -1,0 +1,615 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400px;
+}
+
+body {
+  overflow: hidden;
+}
+
+#headerLogoutButton:focus {
+  outline: none;
+}
+
+#headerLogoutButton:hover {
+  cursor: pointer;
+}
+
+#container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+#todolist {
+  display: grid;
+  border: solid black 2px;
+  width: auto;
+  padding: 2vh 2.5vw 2vh 2.5vw;
+  height: 70vh;
+  margin-top: 3rem;
+}
+
+#ifempty {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+#ifempty h1 {
+  font-size: 50pt;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  margin-left: 2.5rem;
+}
+
+.buttons {
+  font-size: 16pt;
+  width: 10vw;
+  height: 6vh;
+  border-radius: 100px;
+}
+
+.buttons:hover {
+  cursor: pointer;
+}
+
+.buttons:focus {
+  outline: none;
+}
+
+#AddNew {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: #bbc2e2;
+  min-width: 150px;
+}
+
+#save {
+  background-color: #70eb65;
+  min-width: 150px;
+}
+
+#AddNew-lightbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.37);
+  width: 35vw;
+  height: 90vh;
+  color: black;
+  font-size: 16pt;
+  z-index: -100;
+  opacity: 0;
+}
+
+#close-task-info-button {
+  background: transparent;
+  font-size: 26pt;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  color: #d45858;
+}
+
+#close-task-info-button:focus {
+  outline: none;
+}
+
+#close-task-info-button:hover {
+  cursor: pointer;
+}
+
+#Task-Name-id {
+  margin-top: 5rem;
+  border: solid black 2px;
+  width: 25vw;
+  height: 7vh;
+  padding: 0.5rem;
+  font-size: 35pt;
+  text-align: center;
+  border-radius: 7px;
+}
+
+#Task-Name-id:focus {
+  outline: none;
+}
+
+#Task-Name-id::placeholder {
+  text-align: center;
+}
+
+#rubrik {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+#task-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+#task-info-elements {
+  width: 25vw;
+}
+
+#task-description-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#done-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#done {
+  margin-top: 1rem;
+  font-size: 16pt;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 100px;
+  background-color: #70eb65;
+  transition: transform 0.15s ease;
+}
+
+#done:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+#done:focus {
+  outline: none;
+}
+
+#add-task-error-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #dd5e5e;
+  opacity: 0;
+}
+
+#progressbar {
+  display: flex;
+  align-items: center;
+}
+
+#assigned,
+#deadline-input {
+  border: solid black 2px;
+  margin-left: 1rem;
+  border-radius: 7px;
+  height: 1.7rem;
+  padding: 0px 7px;
+}
+
+#deadline-input {
+  margin-left: 1.2rem;
+}
+
+#assigned:focus,
+#deadline-input:focus {
+  outline: none;
+}
+
+#progressbar-slider {
+  -webkit-appearance: none;
+  border: solid black 2px;
+  background: transparent;
+  height: 1rem;
+  border-radius: 100px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 125px;
+  z-index: 100;
+}
+
+#progressbar-slider::-ms-fill-lower {
+  background: #70eb65;
+}
+
+#test1 {
+  display: flex;
+  margin-left: 1.2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 125px;
+}
+
+#progressbar-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #70eb65;
+  width: 20px;
+  height: 1.5rem;
+  border-radius: 100px;
+  position: relative;
+}
+
+#percentage {
+  margin-left: 0.2rem;
+}
+
+#name,
+#deadline {
+  display: flex;
+  align-items: center;
+}
+
+#deadline {
+  margin-bottom: 3rem;
+}
+
+#Task-Name {
+  background: transparent;
+  border: solid black 2px;
+}
+
+#Task-Name::placeholder {
+  color: black;
+  text-align: center;
+}
+
+#Task-Name:focus {
+  color: black;
+  outline: none;
+}
+
+#description-content {
+  width: 25vw;
+  height: 20vh;
+  border: solid black 2px;
+  resize: none;
+  padding: 0.5rem;
+  border-radius: 7px;
+}
+
+#description-content:focus {
+  outline: none;
+}
+
+#burgerContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#headerLogoutButton {
+  text-decoration: none;
+  font-size: 22pt;
+  background: none;
+  position: absolute;
+  top: 0;
+  color: #322e18;
+  margin-right: 2vw;
+  margin-top: 1vw;
+  z-index: 100;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 15vw;
+  transform: translate(85vw, -100vh);
+  height: 100vh;
+  background-color: #847979;
+  transition: transform 0.5s ease;
+}
+
+#menu:target {
+  transform: translate(85vw, 0vh);
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 25pt;
+  margin-bottom: 5vh;
+}
+
+#info,
+#about,
+#login,
+#logout {
+  position: relative;
+  text-align: center;
+}
+
+#info::after,
+#about::after,
+#login::after,
+#logout::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info::before,
+#about::before,
+#login::before,
+#logout::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  transform-origin: left;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info:hover::before,
+#about:hover::before,
+#login:hover::before,
+#logout:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+#info:hover::after,
+#about:hover::after,
+#login:hover::after,
+#logout:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.taskItem {
+  position: relative;
+  border: solid black 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12vw;
+  min-width: 200px;
+  height: 60px;
+  background-color: transparent;
+}
+
+.taskItem:hover {
+  cursor: pointer;
+}
+
+.taskItemLeftSide {
+  width: 100%;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
+.taskItemName {
+  font-size: 16pt;
+}
+
+.taskItemRightSide {
+  width: 100%;
+  margin-left: 1rem;
+  height: 100%;
+}
+
+.displayPercentage {
+  display: flex;
+  justify-content: center;
+  font-size: 16pt;
+}
+
+#removeTask {
+  margin-top: 1rem;
+  background: none;
+  font-size: 10pt;
+  color: #dd5e5e;
+  font-weight: 600;
+  border-bottom: solid white 2px;
+  transition: border 0.2s ease;
+}
+
+#removeTask:hover {
+  cursor: pointer;
+  border-bottom: solid #dd5e5e 2px;
+}
+
+#removeTask:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  #AddNew-lightbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.37);
+    width: 100vw;
+    height: 100vh;
+    color: black;
+    font-size: 16pt;
+    z-index: -100;
+    opacity: 0;
+  }
+
+  #close-task-info-button {
+    background: transparent;
+    font-size: 26pt;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    color: #d45858;
+  }
+
+  #close-task-info-button:focus {
+    outline: none;
+  }
+
+  #close-task-info-button:hover {
+    cursor: pointer;
+  }
+
+  #Task-Name-id {
+    margin-top: 5rem;
+    border: solid black 2px;
+    width: 70vw;
+    height: 7vh;
+    padding: 0.5rem;
+    font-size: 35pt;
+    text-align: center;
+    border-radius: 7px;
+  }
+
+  #Task-Name-id:focus {
+    outline: none;
+  }
+
+  #Task-Name-id::placeholder {
+    text-align: center;
+  }
+
+  #rubrik {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  #task-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #task-info-elements {
+    width: 60vw;
+  }
+
+  #task-description-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+  }
+
+  #description-content {
+    width: 70vw;
+    height: 20vh;
+    border: solid black 2px;
+    resize: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+  }
+
+  #description-content:focus {
+    outline: none;
+  }
+
+  #done-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #done {
+    margin-top: 3vh;
+    font-size: 16pt;
+    width: 25vw;
+    max-width: 130px;
+    height: 5vh;
+    border-radius: 100px;
+    background-color: #70eb65;
+    transition: transform 0.15s ease;
+  }
+
+  #done:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+  }
+
+  #done:focus {
+    outline: none;
+  }
+
+  #add-task-error-message {
+    margin-top: 3vh;
+    text-align: center;
+    color: #dd5e5e;
+    opacity: 0;
+  }
+
+  #ifempty {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
+
+  #ifempty h1 {
+    font-size: 30pt;
+  }
+
+  #ifempty h2 {
+    font-size: 14pt;
+  }
+
+  #headerLogoutButton {
+    font-size: 16pt;
+  }
+}

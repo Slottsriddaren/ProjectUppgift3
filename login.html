@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/register.css" />
+    <script defer src="./js/login.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>Login</h1>
+      <form>
+        <input
+          type="text"
+          id="email"
+          placeholder="E-post"
+          value=""
+          autocomplete="off"
+        />
+        <input type="password" id="password" placeholder="Password" value="" />
+
+        <div id="error-messages"></div>
+        <input type="submit" value="Login" id="submit" />
+      </form>
+      <a href="home.html" id="back-button">←Home Page</a>
+    </div>
+  </body>
+</html>

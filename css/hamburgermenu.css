@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400px;
+}
+
+body {
+  overflow: hidden;
+}
+
+#burgerContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#menuButton {
+  text-decoration: none;
+  font-size: 35pt;
+  background: none;
+  position: absolute;
+  top: 0;
+  color: white;
+  margin-right: 2vw;
+  margin-top: 1vw;
+  z-index: 100;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 15vw;
+  transform: translate(85vw, -100vh);
+  height: 100vh;
+  background-color: #847979;
+  transition: transform 0.5s ease;
+  /*content: "";*/
+}
+
+#menu:target {
+  transform: translate(85vw, 0vh);
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 25pt;
+  margin-bottom: 5vh;
+}
+
+#info,
+#about,
+#login {
+  position: relative;
+  text-align: center;
+}
+
+#info::after,
+#about::after,
+#login::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info::before,
+#about::before,
+#login::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  transform-origin: left;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+#info:hover::before,
+#about:hover::before,
+#login:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+#info:hover::after,
+#about:hover::after,
+#login:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
